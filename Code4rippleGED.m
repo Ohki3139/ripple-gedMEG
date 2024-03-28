@@ -57,7 +57,7 @@ st_time   = 501; ed_time  = st_time + duration;
 % Therefore, the execution outcomes may vary slightly depending on the specific run.
 dipole_data(dipoleLoc, st_time : ed_time ) = 15*sin(2*pi*frex*( 0 : duration ) /MEG.srate ) + scaler4noise*randn(1,  duration + 1) ;
 
-% Simulation 2: signal only consisting of phase amplitude coupling (e.g., spindle and ripple)
+% Simulation 2: signal consisting of phase amplitude coupling (e.g., spindle and ripple)
 % parameter 4 the coupling strength
 % nonmodulatedamplitude = 5; % increase this to get less modulation; you'll see that this is reflected in the MI value
 % 
