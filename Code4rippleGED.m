@@ -39,7 +39,7 @@ lf.GainN = bsxfun(@times, squeeze( lf.Gain(:,1,:)), lf.GridOrient(:,1)') + bsxfu
 % create 1000 time points of random dipole data in the brain
 
 % noise level
-scaler4noise = 1.1;
+scaler4noise = 0.9;
 dipole_data = scaler4noise*randn( length(lf.Gain), 1000);
 
 % specify the frequency (Hz) 4 the target event
@@ -245,7 +245,7 @@ xticks([]); yticks([]);
 
 
 %%% STEP 4 : Generalized eigendecomposition (GED)
-[evecs, evals] = eig(covT, covC);
+[evecs, evals] = eig(covT, covC_SR);
 
 % sort eigenvalues/vectors
 [evals, sidx] = sort(diag(evals),'descend');
